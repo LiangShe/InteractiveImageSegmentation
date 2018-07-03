@@ -81,6 +81,7 @@ class InteractiveImageSegmentation:
         self.bgdModel = np.zeros((1,65),np.float64)
         self.fgdModel = np.zeros((1,65),np.float64)
         cv2.grabCut(img, self.mask, None, self.bgdModel, self.fgdModel, 1, cv2.GC_INIT_WITH_MASK)
+        cv2.imshow('image',img)
 
         while True:
             self.radius = cv2.getTrackbarPos('brush size',self.winname)
